@@ -90,5 +90,5 @@ local.properties
 # lib
 lib/
 # .idea
-.idea/
+/.idea
 
