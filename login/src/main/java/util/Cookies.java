@@ -1,4 +1,4 @@
-package main.java.util;
+package util;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Cookies {
-    // HashMap : 키의 중복이 허용되지 않지만 값의 중복은 허용한다.
     private Map<String, Cookie> cookieMap = new HashMap<String, Cookie>();
 
     public Cookies(HttpServletRequest request) {
@@ -38,12 +37,12 @@ public class Cookies {
     }
 
     public static Cookie createCookie(String name, String value)
-        throws IOException {
+            throws IOException {
         return new Cookie(name, URLEncoder.encode(value, "utf-8"));
     }
 
     public static Cookie createCookie(String name, String value, String path, int maxAge)
-        throws IOException {
+            throws IOException {
         Cookie cookie = new Cookie(name, URLEncoder.encode(value, "utf-8"));
         cookie.setPath(path);
         cookie.setMaxAge(maxAge);
