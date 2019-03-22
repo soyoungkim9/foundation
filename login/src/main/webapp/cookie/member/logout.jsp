@@ -1,22 +1,24 @@
 <%--
   Created by IntelliJ IDEA.
-  User: soyoungkim
-  Date: 2019-03-19
-  Time: 오후 5:44
+  User: CI
+  Date: 2019-03-22
+  Time: 오전 11:23
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="util.Cookies" %>
 <%
-    response.addCookie(Cookies.createCookie("name","김소영"));
     response.addCookie(
-      Cookies.createCookie("id", "madvirus", "/cookie", -1));
+            Cookies.createCookie("AUTH", "", "/", 0)
+    );
 %>
 <html>
 <head>
-    <title>Cookies 사용 예</title>
+    <title>로그아웃</title>
 </head>
 <body>
-Cookies를 사용하여 쿠키 생성
+
+로그아웃하였습니다.
+
 </body>
 </html>
