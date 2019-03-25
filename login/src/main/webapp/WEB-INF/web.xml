@@ -18,7 +18,7 @@
             jdbcdriver=oracle.jdbc.driver.OracleDriver
             jdbcUrl=jdbc:oracle:thin:@localhost:1521:orcl
             dbUser=login
-            dbPass=0911
+            dbPass=****
             validationQuery=select 1
             minIdle=3
             maxTotal=30
