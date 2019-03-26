@@ -8,6 +8,7 @@
         <session-timeout>50</session-timeout>
     </session-config>
 
+    <!-- DB 연동 -->
     <listener>
         <listener-class>jdbc.DBCPInitListener</listener-class>
     </listener>
@@ -25,4 +26,36 @@
             poolName=login
         </param-value>
     </context-param>
+
+    <!-- 인코딩 필터 적용-->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>util.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- MVC controller -->
+    <servlet>
+        <servlet-name>ControllerUsingURI</servlet-name>
+        <servlet-class>mvc.controller.ControllerUsingURI</servlet-class>
+        <init-param>
+            <param-name>configFile</param-name>
+            <param-value>
+                /WEB-INF/commandHandlerURI.properties
+            </param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ControllerUsingURI</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
 </web-app>
