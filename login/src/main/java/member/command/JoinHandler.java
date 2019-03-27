@@ -12,13 +12,13 @@ import java.util.Map;
 
 public class JoinHandler implements CommandHandler {
 
-    private static final String FORM_VIEW = "/WEB_INF/view/joinForm.jsp";
+    private static final String FORM_VIEW = "/WEB-INF/view/joinForm.jsp";
     private JoinService joinService = new JoinService();
 
     @Override
     public String process(HttpServletRequest req, HttpServletResponse res)
             throws Exception {
-        if(req.getMethod().equalsIgnoreCase("GET")) {
+        if(req.getMethod().equalsIgnoreCase( "GET")) {
             return processForm(req, res);
         } else if(req.getMethod().equalsIgnoreCase("POST")) {
             return processSubmit(req, res);
@@ -34,9 +34,9 @@ public class JoinHandler implements CommandHandler {
     private String processSubmit(HttpServletRequest req, HttpServletResponse res) {
         JoinRequest joinReq = new JoinRequest();
         joinReq.setId(req.getParameter("id"));
-        joinReq.setId(req.getParameter("name"));
-        joinReq.setId(req.getParameter("pwd"));
-        joinReq.setId(req.getParameter("confirmPwd"));
+        joinReq.setName(req.getParameter("name"));
+        joinReq.setPwd(req.getParameter("pwd"));
+        joinReq.setConfirmPwd(req.getParameter("confirmPwd"));
 
         Map<String, Boolean> errors = new HashMap<>();
         req.setAttribute("errors", errors);
@@ -49,7 +49,7 @@ public class JoinHandler implements CommandHandler {
 
         try {
             joinService.join(joinReq);
-            return "/WEB-INF/joinSuccess.jsp";
+            return "/WEB-INF/view/joinSuccess.jsp";
         } catch (DuplicateIdException e) {
             errors.put("duplicateId", Boolean.TRUE);
             return FORM_VIEW;

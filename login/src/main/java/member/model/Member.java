@@ -35,7 +35,7 @@ public class Member {
         this.pwd = pwd;
     }
 
-    public boolean matchPassword(String pwd) {
-        return pwd.equals(pwd);
+    public boolean matchPassword(String password) {
+        return pwd.equals(password);
     }
 }

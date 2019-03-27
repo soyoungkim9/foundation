@@ -19,7 +19,7 @@
             jdbcdriver=oracle.jdbc.driver.OracleDriver
             jdbcUrl=jdbc:oracle:thin:@localhost:1521:orcl
             dbUser=login
-            dbPass=****
+            dbPass=0911
             validationQuery=select 1
             minIdle=3
             maxTotal=30
@@ -52,6 +52,7 @@
                 /WEB-INF/commandHandlerURI.properties
             </param-value>
         </init-param>
+        <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
