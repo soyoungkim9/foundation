@@ -28,6 +28,7 @@ hs_err_pid*
 # IntelliJ project files
 .idea/
 *.iml
+*.eml
 out
 gen### Eclipse template
 
@@ -44,7 +45,6 @@ local.properties
 .recommenders
 .classpath
 .project
-*.eml
 
 # External tool builders
 .externalToolBuilders/
