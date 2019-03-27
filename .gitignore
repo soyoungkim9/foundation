@@ -44,7 +44,7 @@ local.properties
 .recommenders
 .classpath
 .project
-login.eml
+*.eml
 
 # External tool builders
 .externalToolBuilders/
