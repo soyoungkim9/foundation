@@ -40,4 +40,14 @@ public class MemberDao {
             pstmt.executeUpdate();
         }
     }
+
+    public void update(Connection conn, Member member) throws SQLException {
+        try (PreparedStatement pstmt = conn.prepareStatement(
+                "UPDATE member SET name = ? , pwd = ? WHERE id = ?")){
+            pstmt.setString(1, member.getName());
+            pstmt.setString(2, member.getPwd());
+            pstmt.setString(3, member.getId());
+            pstmt.executeUpdate();
+        }
+    }
 }

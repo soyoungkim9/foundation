@@ -38,4 +38,8 @@ public class Member {
     public boolean matchPassword(String password) {
         return pwd.equals(password);
     }
+
+    public void changePassword(String newPwd) {
+        this.pwd = newPwd;
+    }
 }
