@@ -1,7 +1,7 @@
 // 모듈을 불러와서 사용할 파일
 
 // var.js파일에 잇는 값을 불러온다.
-const {old, even} = require('./var');
+const {odd, even} = require('./var');
 
 function checkOddOrEven(num) {
     if(num % 2) {
