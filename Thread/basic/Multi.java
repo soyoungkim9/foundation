@@ -13,7 +13,7 @@ class multi {
     ThreadEx1 th1 = new ThreadEx1();
     ThreadEx2 th2 = new ThreadEx2();
     
-    th2.setPriority(7); /* 우선순위 지정*/
+    // th2.setPriority(7); /* 우선순위 지정*/
     
     System.out.println("Priority of th1(-) : " + th1.getPriority());
     System.out.println("Priority of th2(|) : " + th2.getPriority());
